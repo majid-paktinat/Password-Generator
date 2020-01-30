@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Criteria</h2>
+          <h5 id='Alertbx' class="alert alert-primary" role="alert"></h5>
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                    <form onSubmit="submitCriteria(); return false;">
+                      <div class="form-group">
+                        <label for="passLength">Password Length:</label>
+                        <input type="text" class="form-control" id="passLength" aria-describedby="passLengthHelp" placeholder="Enter Length">
+                        <small id="lengthHelp" class="form-text text-muted">Should be between (8 to 128)</small>
+                      </div><br>
+                      <div class="form-check">
+                        <label>Password will include:</label><br>
+                        <input type="checkbox" class="form-check-input" id="lowerCase">
+                        <label class="form-check-label" for="lowerCase">Lower Case</label><br>
+            
+                        <input type="checkbox" class="form-check-input" id="upperCase">
+                        <label class="form-check-label" for="upperCase">Upper Case</label><br>
+                        
+                        <input type="checkbox" class="form-check-input" id="numberCase">
+                        <label class="form-check-label" for="numberCase">Numbers</label><br>
+                        
+                        <input type="checkbox" class="form-check-input" id="specialCase">
+                        <label class="form-check-label" for="specialCase">Special Characters</label><br>
+                      </div>
+                      <br>
+                      <button id='CriteriaBtn' type="submit" class="btn btn-primary">Save Criteria</button>
+                    </form>
+                </div>
+              </div>   
+            </div>
+      </div>
+               
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+          <h5 id='Messbx' class="alert alert-primary" role="alert"></h5>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generateBtn" class="btn">Generate Password</button>
+          <button id='copyButn' type="button" class="btn btn-primary">Copy</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
